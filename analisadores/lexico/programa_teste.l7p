@@ -1,0 +1,42 @@
+# função de soma
+inteirim encasqueta Soma (inteirim a, inteirim b) {
+ inteirim soma;
+ soma = a + b;
+
+ arreda soma; 
+
+ }
+
+ontoco encasqueta Main (to_ti_falano args) {
+  inteirim a = panha("Digite um numero:");
+  inteirim b = panha("Digite outro numero:");
+  inteirim resultado = Soma(a , b);
+  meia_boca bool = di_vera;
+
+  nu_jeito(resultado >= 10) dediprosa("resultado maior que 10");
+  causo dediprosa("resultado menor que 10");
+  ques_sera(resultado == 10) dediprosa("O resultado igual a 10"); 
+
+  logo_ai( a >= 10) {
+    dediprosa(a);
+  }
+
+  e_mio {
+    dediprosa(b);
+  } logo_ai(b <= 10);
+
+  quale(a) {
+    qui_nem 1 :
+     dediprosa("resultado igual 1");
+     po_para;
+    qui_nem 2:
+      dediprosa("resultado igual 2");
+      po_para;
+    murrinha:
+      dediprosa("resultado diferente de 1 e 2");
+  }
+
+  em_tempo(inteirim i = 0; i <= 10; i++) dediprosa(i); 
+
+  cascar_fora;
+}

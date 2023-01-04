@@ -1,0 +1,147 @@
+<ListaFuncao> ::= <DefinirFuncao><ListaFuncao> | x
+<DefinirFuncao> ::= <TipoDeDados> 'encasqueta' id '(' <ListaParametro> ')' '{' <ListaComando> '}' x
+
+<ListaParametro> ::= <Parametro><ListaParametro2> x
+                   |  <ListaParametro2> ::= ',' <Parametro><ListaParametro2> x	 
+                   |  <Paramentro> ::= <TipoDeDados> ' ' id x
+
+x <Tipo_De_Dados> ::= 'inteirim' /* int */
+        		      | 'cadin'  /* float */
+        		      | to_ti_falano  /* string */
+        		      | 'ontoco'  /* void */
+                  | ‘enjoado’ / * char */
+                  | ‘enrabichado’ /* double */
+                  | ‘meia_boca’ /* boolean */
+
+<ListaComando> ::=  | <Comando><ListaComando> x
+
+x <Comando> ::= <Declaracao>
+            | <Atributo>
+            | <em_tempo> /* for */
+            | <nu_jeito> /* if */
+            | <causo> /* else */
+	          | <ques_sera> /*else if*/
+            | <arreda> /* return */
+            | <panha> /* input */
+            | <dediprosa> /* output */
+            | <logo_ai> / * while */
+            | <e_mio> / * do */
+            | <quale> /* switch */
+            | <Chamada>';' 
+            | '{'<ListaComando>'}'
+
+x <Comando_quale> ::= | <po_para> /* break */
+                   | <perai> /* continue*/
+
+<Declaracao> ::= <TipoDeDados> <ListaId> ';' x
+
+<ListaId> ::= id <ListaId2> x
+
+<ListaId2> ::= ',' id <ListaId2> x
+
+x <Atributo> ::= id '=' <ExpressaoAritimetica> ';'
+              | id '=' <Comando>
+              | <TipoDeDados> id '=' <ExpressaoAritimetica> ';'
+              | <TipoDeDados> id '=' <Comando>
+
+<ExpressaoAritimetica> ::= <Termo><ExpressaoAritimetica2> x
+
+<ExpressaoAritimetica2> ::= <Operador_aritimetico><ExpressaoAritimetica> | x
+
+<Termo> ::= <Fator><Termo2> x
+
+<Termo2> ::= <Operador_aritimetico<Termo> |  x
+
+x <Fator> ::= <Operando> 
+          | <Chamada> 
+          | '('<ExpressaoAritimetica>')'
+
+x <Operando> ::= id
+             | cli /* constante literal integer */
+             | clf /* constante literal float */
+             | cls /* constante literal string */
+             | clc /* constante literal char */
+             | cld  /* constante literal double */
+             | clb /* constante literal boolean */
+
+x <Operador_aritimetico> ::= '+' 
+                         | '-'
+                         | ‘*’ 
+                         | '/'             
+
+x <Operador_relacional> ::= '<' 
+                        | '>' 
+                        | '>=' 
+                        | '<=' 
+                        | '==' 
+                        | '!=’
+
+x <Operador_atribuicao> ::= ‘+=’
+				                | ‘-=’
+				                | ‘*=’
+				                | ‘/=’
+
+x <ExpressaoRelacional> ::= <ExpressaoAritimetica><Operador_relacional><ExpressaoAritimetica>
+
+<Pre_Incrementacao> ::= ‘++’ id x
+
+<Pre_Decrementacao> ::= ‘--’ id x
+
+<Pos_Incrementacao> ::= id ‘++’ x
+
+<Pos_Decrementacao> ::= id ‘--’ x
+
+x <Expressao_Declaracao> ::= <ExpressaoRelacional>
+                         | <Pre_Incrementacao>
+                         | <Pre_Decrementacao>
+                         | <Pos_Incrementacao>
+                         | <Pos_Decrementacao>
+
+x <nu_jeito> ::= 'nu_jeito' '('<ExpressaoRelacional>')' <Comando> <causo> /* if*/
+x <ques_sera> ::= ‘ques_sera’ '(' <ExpressaoRelacional> ')' <Comando> <causo> /* else if*/
+x <causo> ::= 'causo' <Comando> | /* else */
+
+x <arreda> ::= 'arreda' <Fator> ';' /* return */
+
+x <panha> ::= 'panha' '(' id ')'';' /* input */
+
+x <dediprosa> ::= 'dediprosa' '('<Operando>')' ';' /* output */
+
+x <po_para> ::= ‘po_para’ ';' /* break*/
+
+x <perai> ::= ‘perai’ ';' /* continue */
+
+<Chamada> ::= 'id' '('<ListaArgumento>')' ';' x
+
+<ListaArgumento> ::= <Operando><ListaArgumento2> | x
+
+<ListaArgumento2> ::= ','<Operando><ListaArgumento2> | x
+
+x <meia_boca> ::= di_vera /* true */ 
+              | bagaca /* false */
+
+/*switch, case, continue, break  */
+
+x <quale> ::= ‘quale’ ‘(‘ id ‘)’ <bloco_quale>
+
+x <bloco_quale> ::= ‘{‘ <quale_nomes> ‘}’
+
+x <quale_nomes> ::= <quale_nome> 
+                 | <quale_nomes> <quale_nome>
+
+x <quale_nome> ::= ‘qui_nem ’ <operando> ‘:’ <Comando> <comando_quale>  
+               | ‘murrinha’ ':' <Comando>
+
+/* for *
+<em_tempo> ::= em_tempo ‘(‘ <em_tempo_incio> ‘;’ <ExpressaoRelacional> ‘;’ <em_tempo_atualizar> ‘)’ ‘{’ <ListaComando> ‘}’ x
+<em_tempo_linha> ::= em_tempo ‘(‘<em_tempo_incio> ‘;’ <ExpressaoRelacional> ‘;’ <em_tempo_atualizar> ‘)’ <Comando> x
+x <em_tempo_incio> ::= <declaracao_em_tempo>
+<em_tempo_atualizar> ::= <Expressao_Declaracao> x
+x <declaracao_em_tempo> ::= <TipoDeDados> id '=' <operando>
+
+/* while, do while */
+<logo_ai> ::= ‘logo_ai’ ‘(‘ <operando> <Operador_relacional> <operando> ')’ '{' <ListaComando> '}' x
+<logo_ai_linha> ::= ‘logo_ai’ ‘(‘ <operando> <Operador_relacional> <operando> ‘)’ <Comando> x
+<e_mio> ::= 'e_mio' ‘{‘ <ListaComando> ‘}’ ‘logo_ai’ ‘(‘ <operando> <Operador_relacional> <operando> ‘)’ ';' x
+
+x <cascar_fora> ::= ‘cascar_fora’ ';' /* end */

@@ -1,0 +1,32 @@
+//Todos os simbolos abaixos devem ser minúsculos e sem pontuação
+-----Tipo De Dados-----
+int = Interim 
+char = Enjoado 
+string =  to_ti_falano 
+double = Enrabichado 
+float = Cadin 
+Boolean = Meia_boca 
+False = Bagaça 
+True = Di_vera 
+Void = Ontocó
+-----------------------
+-----Comandos-----
+if = nu_jeito 
+else = Causo 
+else if =  Ques_sera 
+function = Encasquetá 
+Break = po_para 
+Continue = peraí 
+End / Exit = Cascar_fora
+printf = Dediprosa 
+scanf = Panhá 
+Switch = Qualé 
+Case = Qui_nem 
+Default = Murrinha 
+Return = Arreda 
+------------------
+-----Loopings-----
+for = Em_tempo 
+Do = É_mió 
+while = Logo_ai 
+------------------

@@ -1,0 +1,3 @@
+O código para executar no programa está em analisadores -> lexico -> programa_teste.l7p
+O gerador de código ainda não está funcionando
+O dicionário das palavras se chama Dicionario.txt
